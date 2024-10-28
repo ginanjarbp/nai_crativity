@@ -1,0 +1,58 @@
+.masthead {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-content {
+    width: 40%;
+    text-align: center;
+    color: #ffc107(255, 255, 255);
+}
+
+.slideshow-container {
+    width: 60%; /* Lebar untuk area slideshow */
+    height: 50vh; /* Tinggi area slideshow dikurangi menjadi 50% viewport */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.slideshow {
+    display: flex;
+    width: 100%;
+    padding: 0; /* Hapus padding pada container slideshow */
+    gap: 5px; /* Tambahkan sedikit jarak antar gambar (opsional) */
+}
+
+.slide {
+    width: 33.33%; /* Setiap gambar mengambil sepertiga lebar */
+    height: auto; /* Sesuaikan tinggi gambar berdasarkan lebar */
+    object-fit: cover;
+    filter: blur(10px); /* Gambar blur secara default */
+    opacity: 0.5; /* Setengah transparan secara default */
+    transition: all 2s ease; /* Transisi blur dan opacity */
+}
+
+/* Gambar yang aktif */
+.slide.show {
+    filter: blur(0); /* Hilangkan blur pada gambar yang aktif */
+    opacity: 1; /* Tampilan penuh */
+}
+
+/* Atur gaya teks */
+.text-warning h5, .text-warning h1, .fs-3 h5 {
+    color: #ffc107;
+}
+
+button {
+    background-color: transparent;
+    border-color: #000;
+}
+
