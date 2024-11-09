@@ -4,51 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="card p-4" style="width: 100%; max-width: 400px;">
-            <h3 class="text-center mb-3">Login</h3>
-            <!-- Form Login -->
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <!-- Email Field -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autofocus>
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <!-- Password Field -->
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <!-- Remember Me -->
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">Remember Me</label>
-                </div>
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
-            <!-- Register Link -->
-            <div class="mt-3 text-center">
-                <a href="{{ route('register') }}">Don't have an account? Register here</a>
-            </div>
+<div class="login-container">
+<img src="{{ asset('assets/page1/logo.png') }}" alt="Logo" class="logo" style="width: 50px; height: 50px;"> 
+    <h2>Login</h2>
+    <form action="{{ route('login.submit') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" name="username" id="username" placeholder="Username" required>
         </div>
-    </div>
 
-    <!-- Bootstrap JS (Optional for interaction) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Tampilkan error jika ada -->
+    @if($errors->any())
+        <div class="error-messages">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+</div>
 </body>
 </html>
