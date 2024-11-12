@@ -18,8 +18,8 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
-})->name('admin.dashboard');
+    return view('welcome');
+})->name('welcome');
 
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Route untuk menampilkan form login

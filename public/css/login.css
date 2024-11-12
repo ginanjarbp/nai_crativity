@@ -1,11 +1,12 @@
 /* Mengatur tampilan body dan html untuk memusatkan konten */
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFA500; /* Warna latar belakang oranye */
+    background-color: #ffa500; /* Warna latar belakang oranye */
     font-family: Arial, sans-serif; /* Font yang digunakan */
 }
 
@@ -32,12 +33,24 @@ body, html {
     font-size: 16px; /* Ukuran font */
 }
 
+/* field email */
+.login-container input[type="text"],
+.login-container input[type="email"] {
+    width: 100%; /* Mengisi lebar kontainer */
+    padding: 10px; /* Padding dalam input */
+    margin-bottom: 15px; /* Jarak antar input */
+    border: 1px solid #ddd; /* Border input */
+    border-radius: 4px; /* Sudut melengkung */
+    box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar total */
+    font-size: 16px; /* Ukuran font */
+}
+
 /* Gaya untuk tombol login */
 .login-container button[type="submit"] {
     display: block; /* Menempatkan tombol dalam baris baru */
     width: 100%; /* Mengisi lebar kontainer */
     padding: 10px; /* Padding dalam tombol */
-    background-color: #4CAF50; /* Warna latar belakang tombol */
+    background-color: #4caf50; /* Warna latar belakang tombol */
     color: #ffffff; /* Warna teks tombol */
     border: none; /* Menghilangkan border default */
     border-radius: 4px; /* Sudut melengkung tombol */

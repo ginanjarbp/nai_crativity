@@ -76,8 +76,6 @@
                         <li class="nav-item"><a class="nav-link me-lg-3" href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <nav class="navbar navbar-expand-lg  navbar-light">
         <div class="container">
             <!-- Toggler for small screens -->
@@ -87,29 +85,13 @@
 
             <!-- Navbar Content -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Empty left side to keep dropdown on right -->
-                <ul class="navbar-nav me-auto"></ul>
-                
-                <!-- Admin Dropdown (kanan) -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bi-person-circle me-1"></i> 
+                            <i class="bi-person-circle me-1 fs-3"></i> 
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Dashboard</a>
-                            <a class="dropdown-item" href="#">Users</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#"
-                               onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
-                               Logout
-                            </a>
-                            <form id="logout-form" action="#" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                            <a class="dropdown-item" href="{{ route('login') }}">Login</a>
                         </div>
                     </li>
                 </ul>

@@ -8,18 +8,19 @@
 </head>
 <body>
 <div class="login-container">
-    <img src="{{ asset('assets/page1/logo.png') }}" alt="Logo" class="logo" style="width: 50px; height: 50px;"> 
+    <img src="{{ asset('assets/page1/logo.png') }}" alt="Logo" class="logo" style="width: 90px; height: 50px;"> 
     <h2>Login</h2>
     <form action="{{ route('admin.login') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="text" name="email" id="email" placeholder="Email" required>
         </div>
+
 
         <div class="form-group">
             <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="text" name="password" id="password" placeholder="Password" required>
         </div>
 
         <button type="submit">Login</button>
