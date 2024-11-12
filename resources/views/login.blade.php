@@ -8,13 +8,13 @@
 </head>
 <body>
 <div class="login-container">
-<img src="{{ asset('assets/page1/logo.png') }}" alt="Logo" class="logo" style="width: 50px; height: 50px;"> 
+    <img src="{{ asset('assets/page1/logo.png') }}" alt="Logo" class="logo" style="width: 50px; height: 50px;"> 
     <h2>Login</h2>
-    <form action="{{ route('login.submit') }}" method="POST">
+    <form action="{{ route('admin.login') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for=""></label>
-            <input type="text" name="username" id="username" placeholder="Username" required>
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
         </div>
 
         <div class="form-group">
@@ -26,15 +26,20 @@
     </form>
 
     <!-- Tampilkan error jika ada -->
-    @if($errors->any())
-        <div class="error-messages">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    @if(session('error'))
+        <div>{{ session('error') }}</div>
     @endif
 </div>
+
+<!-- Tambahkan JavaScript untuk menampilkan alert sukses -->
+@if(session('success'))
+<script>
+    alert("{{ session('success') }}"); // Alert "Login berhasil"
+    setTimeout(function() {
+        window.location.href = "{{ route('admin.dashboard') }}"; // Ganti dengan route dashboard admin
+    }, 2000); // Redirect setelah 2 detik
+</script>
+@endif
+
 </body>
 </html>
