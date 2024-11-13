@@ -30,4 +30,10 @@ class AuthController extends Controller
         // Redirect kembali ke form login jika login gagal
         return back()->withErrors(['email' => 'Email atau password salah.']);
     }
+
+    public function logout()
+    {
+        auth()->logout(); // Logout user
+        return redirect()->route('welcome'); // Redirect ke halaman login
+    }
 }

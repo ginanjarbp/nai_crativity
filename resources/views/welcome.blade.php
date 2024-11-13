@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>NAI Creative</title>
         <link href="{{asset('css/home.css')}}" rel="stylesheet" />
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/page1/logo.png" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -120,14 +120,12 @@
                 to develop a comprehensive plan that takes into<br>
                 your specific needs and goals</h5>
         </div>
-        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
             <button class="btn btn-outline-dark btn-lg rounded-pill px-5 py-3 fs-6 fw-bolder" 
                 data-bs-toggle="modal" data-bs-target="#feedbackModal">
                 <span class="d-flex align-items-center">
                     <span>Contact Us</span>
                 </span>
             </button>
-        </div>
     </div>
 
     <!-- Slideshow -->

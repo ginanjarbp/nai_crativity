@@ -25,6 +25,8 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Route untuk menampilkan form login
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit'); // Route untuk proses login
 
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 
 
