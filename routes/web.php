@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArtikelController;
 // routes/web.php
 
 use App\Http\Controllers\AdminController;
@@ -43,3 +44,8 @@ Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin
 Route::get('/admin/reports', [AdminController::class, 'reports'])->name('admin.reports');
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+
+
+// artikel
+Route::resource('artikel', ArtikelController::class);
