@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/coba', function () {
+    return view('coba');
+})->name('coba');
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Route untuk menampilkan form login
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit'); // Route untuk proses login
