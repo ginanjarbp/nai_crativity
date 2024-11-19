@@ -11160,3 +11160,42 @@ footer a:hover, footer a:active, footer a:focus {
     max-width: 17rem;
   }
 }
+
+/* Styling untuk container card scroll */
+.card-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+  overflow-y: auto; /* Membuat list bisa scroll */
+  padding-right: 10px; /* Agar ada sedikit space di sebelah kanan */
+}
+
+/* Styling untuk setiap card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efek hover */
+}
+
+/* Styling untuk tombol */
+.card .btn {
+  margin-top: 10px;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .card-scroll-container {
+      max-height: 300px; /* Sesuaikan tinggi untuk mobile */
+  }
+  .col-lg-6 {
+      flex: 1;
+  }
+}

@@ -406,38 +406,72 @@
         </section>
         <!-- Call to action section-->
         <section id="contact" class="text-left">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                <div class="container">
-                    <div class="map" id="contact">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.57195184591!2d107.62631507381082!3d-6.941649667951466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8641552bf41%3A0xe89f9a982f78a798!2sJl.%20Kliningan%20No.6%2C%20Turangga%2C%20Kec.%20Lengkong%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040264%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1688296696559!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div><br><br><br>
-                    <div class="row align-items-start">
-                        <div class="col-lg-6">
-                            <img src="assets/page1/Asset 49.png" alt="..." style="height: 3rem" /><br>
-                            <p><span class="text-warning d-inline">Get Direction</span><br>
-                            Techno Park Building<br>
-                            Jl. Kliningan 6 Bandung, Provinsi Jawa Barat, Indonesia 40264</p>
-                        </div>
-                        <div class="col-lg-3">
-                        <p><span class="text-warning d-inline">Services Graphic Design :</span><br>
-                                Video Editing<br>
-                                Web Development<br>
-                                IT Training<br>
-                                Motion Graphic<br>
-                                SEO
-                        </div>
-                        <div class="col-lg-3">
-                        <p><span class="text-warning d-inline">Contact:</span><br>
-                            Ivan Irianto<br>
-                            081224544020<br>
-                            lvanirianto@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <!-- Kolom Peta dan Artikel (Berdampingan) -->
+            <div class="col-lg-6">
+                <!-- Peta -->
+                <div class="map" id="contact">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.57195184591!2d107.62631507381082!3d-6.941649667951466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8641552bf41%3A0xe89f9a982f78a798!2sJl.%20Kliningan%20No.6%2C%20Turangga%2C%20Kec.%20Lengkong%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040264%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1688296696559!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </section>
+
+            <div class="col-lg-6">
+                <!-- Scrollable Card List untuk Artikel -->
+                <h3>Artikel Terbaru</h3>
+                <div class="card-scroll-container">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <h5 class="card-title">Judul Artikel 1</h5>
+                        <p class="card-text">Deskripsi singkat artikel pertama...</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <h5 class="card-title">Judul Artikel 2</h5>
+                        <p class="card-text">Deskripsi singkat artikel kedua...</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <h5 class="card-title">Judul Artikel 3</h5>
+                        <p class="card-text">Deskripsi singkat artikel ketiga...</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-start mt-4">
+            <div class="col-lg-6">
+                <img src="assets/page1/Asset 49.png" alt="..." style="height: 3rem" /><br>
+                <p><span class="text-warning d-inline">Get Direction</span><br>
+                    Techno Park Building<br>
+                    Jl. Kliningan 6 Bandung, Provinsi Jawa Barat, Indonesia 40264
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p><span class="text-warning d-inline">Services Graphic Design:</span><br>
+                    Video Editing<br>
+                    Web Development<br>
+                    IT Training<br>
+                    Motion Graphic<br>
+                    SEO
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p><span class="text-warning d-inline">Contact:</span><br>
+                    Ivan Irianto<br>
+                    081224544020<br>
+                    ivanirianto@gmail.com
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- Footer-->
         <footer class="bg-black text-left py-5">
             <div class="container px-5">
