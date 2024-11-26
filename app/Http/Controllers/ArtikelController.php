@@ -44,7 +44,7 @@ class ArtikelController extends Controller
     public function index()
     {
         $artikels = Artikel::all();
-        return view('artikel.index', compact('artikels'));
+        return view('artikel.artikel', compact('artikels'));
     }
 
     // Menghapus artikel berdasarkan ID

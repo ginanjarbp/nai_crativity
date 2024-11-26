@@ -31,6 +31,8 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); /
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit'); // Route untuk proses login
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/createArtikel', [ArtikelController::class, 'create'])->name('createArtikel');
+Route::get('/Artikel', [ArtikelController::class, 'index'])->name('Artikel');
 
 
 
