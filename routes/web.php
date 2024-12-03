@@ -32,6 +32,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit'); /
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/createArtikel', [ArtikelController::class, 'create'])->name('createArtikel');
+Route::get('/createArtikel/aksi', [ArtikelController::class, 'store']);
 Route::get('/Artikel', [ArtikelController::class, 'index'])->name('Artikel');
 
 
