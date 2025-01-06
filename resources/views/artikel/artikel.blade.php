@@ -59,32 +59,34 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <!-- Looping data artikel -->
-                                    @foreach($artikels as $artikel)
-                                        <tr>
-                                            <td>{{ $artikel->id }}</td>
-                                            <td>{{ $artikel->judul }}</td>
-                                            <td>{{ Str::limit($artikel->konten, 50) }}</td> <!-- Menampilkan 50 karakter pertama dari konten -->
-                                            <td>
-                                                @if($artikel->gambar)
-                                                    <img src="{{ Storage::url($artikel->gambar) }}" width="50" alt="Gambar Artikel">
-                                                @else
-                                                    <span>Tidak ada gambar</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <!-- Tautan untuk edit dan delete -->
-                                                <a href="{{ route('artikel.edit', $artikel->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                                <form action="{{ route('artikel.destroy', $artikel->id) }}" method="POST" style="display:inline;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?')">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
+                                    <tbody>
+                                        <!-- Looping data artikel -->
+                                        @foreach($artikels as $artikel)
+                                        
+                                            <tr>
+                                                <!-- Menampilkan nomor urut -->
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $artikel->judul }}</td>
+                                                <td>{{ Str::limit($artikel->konten, 50) }}</td> <!-- Menampilkan 50 karakter pertama dari konten -->
+                                                <td>
+                                                    @if($artikel->gambar)
+                                                        <img src="{{ Storage::url($artikel->gambar) }}" width="50" alt="Gambar Artikel">
+                                                    @else
+                                                        <span>Tidak ada gambar</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <!-- Tautan untuk edit dan delete -->
+                                                    <a href="{{ route('artikel.edit', $artikel->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                                    <form action="{{ route('artikel.destroy', $artikel->id) }}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?')">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->

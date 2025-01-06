@@ -6,6 +6,8 @@ use App\Http\Controllers\ArtikelController;
 // routes/web.php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,14 @@ Route::get('/', function () {
 Route::get('/coba', function () {
     return view('coba');
 })->name('coba');
+Route::get('/', [AuthController::class, 'showWelcomePage'])->name('welcome');
+
+Route::get('/artikel-home', [ArticleController::class, 'index'])->name('artikel.home');
+Route::get('/artikel/{id}', [ArticleController::class, 'show'])->name('artikel.detail');
+// Di routes/web.php
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+
+
 
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Route untuk menampilkan form login
@@ -34,6 +44,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/createArtikel', [ArtikelController::class, 'create'])->name('createArtikel');
 Route::get('/createArtikel/aksi', [ArtikelController::class, 'store']);
 Route::get('/Artikel', [ArtikelController::class, 'index'])->name('Artikel');
+// Di routes/web.php
+Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+
+
+
 
 
 

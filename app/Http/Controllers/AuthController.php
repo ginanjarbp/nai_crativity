@@ -3,9 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Artikel;
 
 class AuthController extends Controller
 {
+
+
+    public function showWelcomePage()
+    {
+        // Ambil data artikel dari database
+        $artikels = Artikel::latest()->take(5)->get(); // Mengambil 2 artikel terbaru
+
+        // Kirim data artikel ke welcome.blade.php
+        return view('welcome', compact('artikels'));
+    }
+
     // Method untuk menampilkan form login
     public function showLoginForm()
     {
@@ -36,4 +48,5 @@ class AuthController extends Controller
         auth()->logout(); // Logout user
         return redirect()->route('welcome'); // Redirect ke halaman login
     }
+
 }

@@ -47,7 +47,9 @@
 }
 
 /* Atur gaya teks */
-.text-warning h5, .text-warning h1, .fs-3 h5 {
+.text-warning h5,
+.text-warning h1,
+.fs-3 h5 {
     color: #ffc107;
 }
 
@@ -55,4 +57,3 @@ button {
     background-color: transparent;
     border-color: #000;
 }
-

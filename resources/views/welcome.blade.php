@@ -59,52 +59,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-            <div class="container px-5">
-            <img src="assets/page1/logo.png" alt="logo" style="height: 3rem;">
-                <!-- <a class="navbar-brand fw-bold" href="#page-top">Start Bootstrap</a> -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="bi-list"></i>
-                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-left me-4 my-3 my-lg-0">
-                    <li class="nav-item"><a class="nav-link me-lg-3" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#portofolio">Our Portopolio</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                        <nav class="navbar navbar-expand-lg  navbar-light">
-        <div class="container">
-            <!-- Toggler for small screens -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navbar Content -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bi-person-circle me-1 fs-3"></i> 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('login') }}">Login</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-                    </button>
-                    </ul>
-                    
-                </div>
-            </div>
-        </nav>
+        @include('includes.navbar')
         
         <header class="masthead" id="home">
     <div class="text-content">
@@ -405,7 +360,7 @@
             </div>
         </section>
         <!-- Call to action section-->
-        <section id="contact" class="text-left">
+<section id="contact" class="text-left">
     <div class="container px-5">
         <div class="row gx-5 justify-content-center">
             <!-- Kolom Peta dan Artikel (Berdampingan) -->
@@ -417,29 +372,20 @@
             </div>
 
             <div class="col-lg-6">
-                <!-- Scrollable Card List untuk Artikel -->
+            <!-- Scrollable Card List untuk Artikel -->
                 <h3>Artikel Terbaru</h3>
                 <div class="card-scroll-container">
-                    <!-- Card 1 -->
-                    <div class="card">
-                        <h5 class="card-title">Judul Artikel 1</h5>
-                        <p class="card-text">Deskripsi singkat artikel pertama...</p>
-                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    @foreach($artikels as $artikel)
+                    <!-- Menampilkan artikel dalam bentuk card -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $artikel->judul }}</h5> <!-- Menampilkan judul artikel -->
+                            <p class="card-text">{{ Str::limit($artikel->konten, 100) }}</p> <!-- Menampilkan 100 karakter pertama konten -->
+                            <!-- Tombol untuk melihat semua artikel -->
+                            <a href="{{ route('artikel.show', $artikel->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
+                        </div>
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="card">
-                        <h5 class="card-title">Judul Artikel 2</h5>
-                        <p class="card-text">Deskripsi singkat artikel kedua...</p>
-                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card">
-                        <h5 class="card-title">Judul Artikel 3</h5>
-                        <p class="card-text">Deskripsi singkat artikel ketiga...</p>
-                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -473,14 +419,7 @@
 </section>
 
         <!-- Footer-->
-        <footer class="bg-black text-left py-5">
-            <div class="container px-5">
-                <div class="text-white-50 small">
-                    <a href="#!">NAI Creative - 2023</a>
-                    <div class="mb-2"> Copyright &copy; All right reserved</div>
-                </div>
-            </div>
-        </footer>
+        @include('includes.footer')
         <!-- Feedback Modal-->
         <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
